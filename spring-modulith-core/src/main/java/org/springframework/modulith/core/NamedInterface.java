@@ -19,6 +19,7 @@ import static com.tngtech.archunit.base.DescribedPredicate.*;
 import static org.springframework.modulith.core.SyntacticSugar.*;
 import static org.springframework.modulith.core.Types.*;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;

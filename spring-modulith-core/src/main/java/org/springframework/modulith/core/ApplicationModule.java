@@ -112,7 +112,7 @@ public class ApplicationModule implements Comparable<ApplicationModule> {
 		this.information = ApplicationModuleInformation.of(basePackage);
 		this.namedInterfaces = isOpen()
 				? NamedInterfaces.forOpen(basePackage)
-				: NamedInterfaces.discoverNamedInterfaces(basePackage);
+				: NamedInterfacesDetectionStrategyLookup.getStrategy().getModuleNamedInterfaces(basePackage);
 
 		this.springBeans = SingletonSupplier.of(() -> filterSpringBeans(classes));
 		this.aggregateRoots = SingletonSupplier.of(() -> findAggregateRoots(classes));

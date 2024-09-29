@@ -74,7 +74,7 @@ public class NamedInterfaces implements Iterable<NamedInterface> {
 	 * @param interfaces must not be {@literal null}.
 	 * @return will never be {@literal null}.
 	 */
-	static NamedInterfaces of(List<NamedInterface> interfaces) {
+	public static NamedInterfaces of(List<NamedInterface> interfaces) {
 		return interfaces.isEmpty() ? NONE : new NamedInterfaces(interfaces);
 	}
 
@@ -102,7 +102,7 @@ public class NamedInterfaces implements Iterable<NamedInterface> {
 	 * @return will never be {@literal null}.
 	 * @since 1.2
 	 */
-	static NamedInterfaces forOpen(JavaPackage basePackage) {
+	public static NamedInterfaces forOpen(JavaPackage basePackage) {
 
 		return NamedInterfaces.of(NamedInterface.unnamed(basePackage, false))
 				.and(ofAnnotatedPackages(basePackage))
